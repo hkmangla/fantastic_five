@@ -1,0 +1,22 @@
+{
+  "name": "fantastic_five",
+  "version": "1.0.0",
+  "description": "Betting website for CSGO",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hkmangla/fantastic_five.git"
+  },
+  "author": "hkmangla (Hemant Mangla)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hkmangla/fantastic_five/issues"
+  },
+  "homepage": "https://github.com/hkmangla/fantastic_five#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
