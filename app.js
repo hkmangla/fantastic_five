@@ -1,7 +1,8 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
-      path = require('path');
+      path = require('path'),
+      eventsRouter = require('./routes/events.server.routes');
 
 var app = express();
 
@@ -13,6 +14,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
+
+app.use('/events', eventsRouter);
 app.get('/', (req, res) => {
     res.send("Home Page");
 });
