@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const eventController = require("../controllers/event.server.controller");
+		const { HLTV } = require('hltv');
 
-router.get('/', (req, res) => {
-    res.send("Events api");
-});
+router.get('/', eventController.getEvents);
 
 module.exports = router;
