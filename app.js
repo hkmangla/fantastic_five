@@ -2,7 +2,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       cors = require('cors'),
       path = require('path'),
-      eventsRouter = require('./routes/events.server.routes');
+     // eventsRouter = require('./routes/events.server.routes');
       matchRouter = require('./routes/match.server.routes');
 
 var app = express();
