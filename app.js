@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.use('/events', eventsRouter);
+//app.use('/events', eventsRouter);
 app.get('/', (req, res) => {
     res.send("Home Page");
 });
