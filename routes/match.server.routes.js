@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const matchController = require("../controllers/match.server.controller");
+		const { HLTV } = require('hltv');
 
-router.get('/', (req, res) => {
-    res.send("Match api");
-});
+router.get('/', matchController.getMatches);
 
 module.exports = router;
