@@ -7,7 +7,7 @@ const express = require('express'),
       mongoose = require('mongoose'),
       session = require('express-session'),
       passport = require('passport'),
-      LocalStrategy = require('passport-local').LocalStrategy;
+      LocalStrategy = require('passport-local').Strategy;
 
 var app = express();
 
