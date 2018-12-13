@@ -13,8 +13,9 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   onSubmit() {
-    console.log("submitting: ", this.user);
-    this.userService.registerUser(this.user).subscribe();
+    this.userService.registerUser(this.user).subscribe( response => {
+      console.log(response);
+    });
   }
 
   ngOnInit() {

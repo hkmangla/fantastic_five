@@ -13,7 +13,6 @@ export class UserService {
   registerUser(user) {
     const URI = `${this.serverAPI}/users/api`;
     let headers = new HttpHeaders();
-    console.log("register: ", user, URI);
     headers.append('Content-Type', 'application/json');
     return this.http.post(URI, user, {headers: headers});
   }
