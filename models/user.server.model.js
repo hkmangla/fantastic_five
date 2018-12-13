@@ -7,3 +7,9 @@ var userSchema = new Schema({
     email: String,
     password: String
 });
+
+const UserModel = module.exports = mongoose.model('users', userSchema);
+
+module.exports.add = (user, callback) => {
+    user.save(callback);
+}

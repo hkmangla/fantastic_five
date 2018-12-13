@@ -24,7 +24,7 @@
               [(ngModel)]="user.password" name="password" required>
       </div>
 
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button (click)="onSubmit()" type="button" class="btn btn-success">Submit</button>
     </form>
 
     <div>

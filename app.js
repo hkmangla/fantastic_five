@@ -3,6 +3,7 @@ const express = require('express'),
       cors = require('cors'),
       path = require('path'),
       eventsRouter = require('./routes/events.server.routes'),
+      userRouter = require('./routes/user.server.routes')
       dbConfig = require('./config/db.config'),
       mongoose = require('mongoose'),
       session = require('express-session'),
@@ -16,7 +17,6 @@ mongoose.connect(dbConfig.url, {useNewUrlParser: true}).then(
     () => console.log("MongodB server is ready to use!"),
     (err) => console.log(err)
 )
-
 passport.use(new LocalStrategy(
     (username, password, done) => {
         User.findOne({username: username}, (err, user) => {
@@ -31,17 +31,18 @@ passport.use(new LocalStrategy(
     }
 ));
 
-app.use(express.static(path.join(__dirname, 'dist')));
 app.use(session({secret: "userSecret"}));
 app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/events', eventsRouter);
+app.use('/users/api', userRouter);
 app.get('/', (req, res) => {
     res.send("Home Page");
 });
